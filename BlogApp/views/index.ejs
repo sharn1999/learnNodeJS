@@ -1,0 +1,57 @@
+<%- include("partials/header.ejs") %>
+
+        
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <% if(locals.db) {%>
+                    <% db.forEach(el => {%>
+                        <div class="post">
+                            <div class="post__header">
+                                 <h3 class="post__user">
+                                    <%= el.name %>
+                                 </h3>
+                                 <div class="post__dots">
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                     <div class="post__dots-content">
+                                         <ul>
+                                             <li>
+                                                <form action="edit/ <%= el.index %> " method="POST" style="display:inline;">
+                                                    <input type="submit" value="Edit" />
+                                                </form>
+                                             </li>
+                                             <li>
+                                                <form action="delete/ <%= el.index %> " method="POST" style="display:inline;">
+                                                    <input type="submit" value="Delete" />
+                                                </form>
+                                             </li>
+                                         </ul>
+                                     </div> 
+                                 </div>
+                            </div>
+                             <p><%= el.text %></p>
+                             <span class="time">
+                                <% if(el.date){%>
+                                    <% if(el.date.getHours() <= 9){%>0<%=el.date.getHours()%><%} else {%><%= el.date.getHours() %><% } %>:<% if(el.date.getMinutes() <= 9){%>0<%=el.date.getMinutes()%><%} else {%><%= el.date.getMinutes() %><% } %>
+                                <%} %>
+                             </span>
+
+                             <span class="date">
+                                <% if(el.date){%>
+                                    <% if(el.date.getDate() <= 9){%>0<%=el.date.getDate()%><%} else {%><%= el.date.getDate() %><% } %>.<% if(el.date.getMonth() <= 8){%>0<%=el.date.getMonth()+1%><%} else {%><%= el.date.getMonth()+1 %><% } %>.<%=el.date.getFullYear()%>
+                                <%} %>
+                             </span>
+                         </div>
+                    <% }) %>
+                <% }%>
+            </div>
+       </div>
+</main>
+
+<script src="js/script.js"></script>
+    </body>
+
+<%- include("partials/footer.ejs") %>

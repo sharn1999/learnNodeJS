@@ -1,0 +1,131 @@
+
+body{
+    background-color: #f6f5f3;                      
+    font-family: monospace;
+    margin: 0;
+}
+
+
+main{
+    padding-top: 40px;
+    text-align: left;
+    padding-bottom: 300px;
+}
+.caption p{
+    text-align: left;
+}
+
+.thumbnail{
+    border: 1px solid #7e7e7e;
+    padding: 10px;
+}
+
+.thumbnail__img{
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.thumbnail img{
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.post{
+    padding: 20px 40px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+border-radius: 20px;
+margin-top: 30px;
+}
+
+.post span{
+    color: #7e7e7e;
+}
+
+.post p{
+    text-align: left;
+    color: #000;
+    border-bottom: 1px solid #a7a7a7;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.post__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post__user{
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.post__dots{
+    display: flex;
+    width: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+    position: relative;
+}
+
+.post__dots span{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #7e7e7e;
+}
+
+.post__dots-content{
+    position: absolute;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    top: 30px;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.post__dots-content.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.post__dots-content ul{
+    margin-bottom: 0;
+}
+
+.post__dots-content li{
+    list-style-type: none;
+}
+
+.post__dots-content li:first-child{
+    margin-bottom: 10px;
+}
+
+.post__dots-content a{
+    color: #5a5a5a;
+    text-decoration: none;
+}
+
+.add-form input{
+    color: #000;
+}
+
+.add-form textarea{
+    color: #000;
+}
